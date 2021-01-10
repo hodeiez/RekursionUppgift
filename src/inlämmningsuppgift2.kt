@@ -47,7 +47,7 @@ fun main() {
        val list=workers.filter{(k,v)->name.contains(k)}.values.flatten().toList()
 
     //here the recursive function
-        fun buildList(list:List<String>){
+       tailrec fun buildList(list:List<String>){
             if(list.isNotEmpty()){
             list.forEach{e->result.add(e)}
            buildList(workers.filter{(k,v)->workers.keys.filter{v->list.contains(v)}.toString().contains(k)}.values.flatten().toList())
