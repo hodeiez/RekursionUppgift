@@ -63,7 +63,7 @@ public class inlämningsUppgift2 {
         System.out.println("--------------------------");
         test.getSuperiors("Skumtomten").forEach(e -> System.out.println(e));
         System.out.println("--------------------------");
-        test.getSuperiors("Räven").forEach(e -> System.out.println(e));
+        test.getSuperiors("Räven").forEach(e -> System.out.println(e)); //doesn't return right order
 
         // test.getWorkers("Skumtomten").forEach(e-> System.out.println(e));
         //   System.out.println(test.getSuperiors("Skumtomten"));

@@ -50,9 +50,9 @@ fun main() {
         fun buildList(list:List<String>){
             if(list.isNotEmpty()){
             list.forEach{e->result.add(e)}
-                //not very readable. I could create val list into a function, and then pass the string "workers.keys.filter{v->list.contains(v)}.toString()"
-                //through that function. but, its nice to have less lines. :)
            buildList(workers.filter{(k,v)->workers.keys.filter{v->list.contains(v)}.toString().contains(k)}.values.flatten().toList())
+                //not very readable this last one. I could transform val list into a function, and then pass the string "workers.keys.filter{v->list.contains(v)}.toString()"
+                //through that function. but, its nice to have less lines. :)
             }
         }
         buildList(list)
