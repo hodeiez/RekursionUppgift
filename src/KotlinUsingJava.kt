@@ -18,7 +18,6 @@ arbetare.add(Arbetare("Myran",listOf("Bladlusen")))
 return arbetare
 }
 fun findSuperior(name:String):List<String>{
-    val createdList=createList()
     val result = mutableListOf<String>()
 
     fun buildList(name:String):List<String>{
