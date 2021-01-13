@@ -24,8 +24,8 @@ fun findSuperior(name:String):List<String>{
         if(name.isNotBlank()){
             result.add(name)
             println(result)
-            buildList(createList().filter{e->e.child.contains(name)}.map(Arbetare::getName).last())
-        }
+            buildList(createList().filter{e->e.child.contains(name)}.map(Arbetare::getName).last())}
+
         return result
 
     }
