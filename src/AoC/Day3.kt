@@ -14,29 +14,20 @@ fun main() {
     val input = File("src/AoC/day3.txt")
     val theList = input.readLines().map { it }
 
-    val mList = mutableListOf<Char>()
 
-    fun findTrees(down: Int, right: Int) {
+
+    fun findTrees(down: Int, right: Int):Long {
         var rightAwful = right
+        val mList = mutableListOf<Char>()
         for (i in down until theList.size step down) {
             mList.add(theList[i].toCharArray()[rightAwful])
             rightAwful += right
             if (rightAwful >= theList[i].length) rightAwful -= theList[i].length
         }
+        return mList.filter{it=='#'}.count().toLong()
     }
-    findTrees(2, 1)
-//78
-    //247
-    //68
-    //69
-    //78
-    val number:Long=90396072.toLong()*33
-    println(number)
-    println(mList.filter { it == '#' }.count().toLong())
-    fun slopeCheck(jump: Int, toRight: Int) {
-
-    }
-
-
-
+//puzzle 1
+    println(findTrees(1, 3))
+    //puzzle 2
+    println(findTrees(1,3)*findTrees(1,1)*findTrees(1,5)*findTrees(1,7)*findTrees(2,1))
     }
