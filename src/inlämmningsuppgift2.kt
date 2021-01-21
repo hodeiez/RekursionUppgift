@@ -25,7 +25,7 @@ fun main() {
         //down here the recursive function
         fun buildList(name: String): List<String> {
 
-            val boss = workers.filter { (k, v) -> v.contains(name) }.keys.joinToString {it}
+            val boss= workers.filter { (_, v) -> v.contains(name) }.keys.joinToString {it}
             if (boss.isNullOrEmpty()) throw Exception("Didn't find anyone with that name")//throws an exception
             result.add(boss)
             if (boss != workers.keys.toList()[0]) {
@@ -44,13 +44,14 @@ fun main() {
     fun findWhoAreWorker(name: String):List<String>{
 
         val result=mutableListOf<String>()
-       val list=workers.filter{(k,v)->name.contains(k)}.values.flatten().toList()
+       val list=workers.filter{(k,_)->name.contains(k)}.values.flatten().toList()
 
     //here the recursive function
        tailrec fun buildList(list:List<String>){
             if(list.isNotEmpty()){
             list.forEach{result.add(it)}
-           buildList(workers.filter{(k,v)->workers.keys.filter{list.contains(it)}.toString().contains(k)}.values.flatten().toList())
+
+           buildList(workers.filter{(k,_)->workers.keys.filter{list.contains(it)}.toString().contains(k)}.values.flatten().toList())
                 //not very readable this last one. I could transform val list into a function, and then pass the string "workers.keys.filter{v->list.contains(v)}.toString()"
                 //through that function. but, its nice to have less lines. :)
             }

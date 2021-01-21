@@ -33,6 +33,7 @@ public class inlämningsUppgift2 {
     public List<String> getSuperiors(String searchName) {
 
         List<String> returnList;
+        
         var name = workers.stream().filter(e -> e.getChild().contains(searchName)).findAny()
                 .map(Arbetare::getName).map(Object::toString).orElse(null);
         if (name != null) {

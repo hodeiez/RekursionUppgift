@@ -26,6 +26,7 @@ fun main() {
         }
         return mList.filter{it=='#'}.count().toLong()
     }
+
 //puzzle 1
     println(findTrees(1, 3))
     //puzzle 2
