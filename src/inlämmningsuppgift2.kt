@@ -26,7 +26,7 @@ fun main() {
         fun buildList(name: String): List<String> {
 
             val boss= workers.filter { (_, v) -> v.contains(name) }.keys.joinToString {it}
-            if (boss.isNullOrEmpty()) throw Exception("Didn't find anyone with that name")//throws an exception
+            if (boss.isEmpty()) throw Exception("Didn't find anyone with that name")//throws an exception
             result.add(boss)
             if (boss != workers.keys.toList()[0]) {
                 buildList(boss)

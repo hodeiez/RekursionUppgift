@@ -26,12 +26,9 @@ fun validCode(min:Int, max:Int, letter: String, code:String):Int{
     return count
 }
 fun validCodePart2(min:Int, max:Int, letter: String, code:String):Int{
-    println(code.toCharArray().takeIf{(it[min-1].toString()==letter || it[max-1].toString()==letter)&& it[min-1]!=it[max-1]})
     var count=0
-    //if(code.toCharArray().filter{it.toString()==letter}.count().takeIf{it==min }!=null)
-    if(code.toCharArray().takeIf{(it[min-1].toString()==letter || it[max-1].toString()==letter)}!=null)
+    if(code.toCharArray().takeIf{(it[min-1].toString()==letter || it[max-1].toString()==letter)&& it[min-1]!=it[max-1]}!=null)
         count++
-   //println(code.toCharArray().takeIf{it[min-1].toString()==letter || it[max].toString()==letter})
     return count
 }
 
